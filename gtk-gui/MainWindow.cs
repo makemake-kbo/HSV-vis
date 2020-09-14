@@ -11,7 +11,11 @@ public partial class MainWindow
 	
 	private global::Gtk.ColorSelection colorselection2;
 	
+	private global::Gtk.VPaned vpaned1;
+	
 	private global::Gtk.Label label1;
+	
+	private global::Gtk.Entry result;
 
 	protected virtual void Build ()
 	{
@@ -41,19 +45,34 @@ public partial class MainWindow
 		global::Gtk.Paned.PanedChild w1 = ((global::Gtk.Paned.PanedChild)(this.hpaned1 [this.colorselection2]));
 		w1.Resize = false;
 		// Container child hpaned1.Gtk.Paned+PanedChild
+		this.vpaned1 = new global::Gtk.VPaned ();
+		this.vpaned1.CanFocus = true;
+		this.vpaned1.Name = "vpaned1";
+		// Container child vpaned1.Gtk.Paned+PanedChild
 		this.label1 = new global::Gtk.Label ();
 		this.label1.Name = "label1";
-		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("label1");
-		this.hpaned1.Add (this.label1);
+		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("ARGB value");
+		this.vpaned1.Add (this.label1);
+		global::Gtk.Paned.PanedChild w2 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.label1]));
+		w2.Resize = false;
+		// Container child vpaned1.Gtk.Paned+PanedChild
+		this.result = new global::Gtk.Entry ();
+		this.result.CanFocus = true;
+		this.result.Name = "result";
+		this.result.IsEditable = true;
+		this.result.InvisibleChar = '●';
+		this.vpaned1.Add (this.result);
+		this.hpaned1.Add (this.vpaned1);
 		this.GtkAlignment.Add (this.hpaned1);
 		this.frame1.Add (this.GtkAlignment);
 		this.Add (this.frame1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 894;
-		this.DefaultHeight = 248;
+		this.DefaultWidth = 877;
+		this.DefaultHeight = 249;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
+		this.colorselection2.ColorChanged += new global::System.EventHandler (this.OnColorselection2ColorChanged);
 	}
 }

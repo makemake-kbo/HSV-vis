@@ -31,15 +31,34 @@
                   <widget class="Gtk.ColorSelection" id="colorselection2">
                     <property name="MemberName" />
                     <property name="HasOpacityControl">True</property>
+                    <signal name="ColorChanged" handler="OnColorselection2ColorChanged" />
                   </widget>
                   <packing>
                     <property name="Resize">False</property>
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Label" id="hsvDisplay">
+                  <widget class="Gtk.VPaned" id="vpaned1">
                     <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">hsv</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Position">19</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label1">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">ARGB value</property>
+                      </widget>
+                      <packing>
+                        <property name="Resize">False</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <widget class="Gtk.Entry" id="result">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="IsEditable">True</property>
+                        <property name="InvisibleChar">●</property>
+                      </widget>
+                    </child>
                   </widget>
                 </child>
               </widget>

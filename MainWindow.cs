@@ -13,4 +13,9 @@ public partial class MainWindow: Gtk.Window
 		Application.Quit ();
 		a.RetVal = true;
 	}
+
+	protected void OnColorselection2ColorChanged (object sender, EventArgs e)
+	{
+		result.Text= colorselection2.CurrentColor.ToString();
+	}
 }
