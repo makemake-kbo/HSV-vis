@@ -1,6 +1,0 @@
-/home/makemake/Documents/code/csharpshit/HSV visualizer/HSV-vis/HSV-vis/obj/x86/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/makemake/Documents/code/csharpshit/HSV visualizer/HSV-vis/HSV-vis/obj/x86/Release/HSVvis.gtk-gui.gui.stetic
-/home/makemake/Documents/code/csharpshit/HSV visualizer/HSV-vis/HSV-vis/bin/Release/HSV-vis.exe.mdb
-/home/makemake/Documents/code/csharpshit/HSV visualizer/HSV-vis/HSV-vis/bin/Release/HSV-vis.exe
-/home/makemake/Documents/code/csharpshit/HSV visualizer/HSV-vis/HSV-vis/obj/x86/Release/HSV-vis.exe
-/home/makemake/Documents/code/csharpshit/HSV visualizer/HSV-vis/HSV-vis/obj/x86/Release/HSV-vis.exe.mdb

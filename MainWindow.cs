@@ -16,6 +16,6 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnColorselection2ColorChanged (object sender, EventArgs e)
 	{
-		result.Text= colorselection2.CurrentColor.ToString();
+		rawRGBResult.Text= colorselection2.CurrentColor.ToString();
 	}
 }

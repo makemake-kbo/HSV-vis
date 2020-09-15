@@ -5,9 +5,9 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Release/HSV-vis.exe" internal="true" />
+    <widget-library name="../bin/Debug/HSV-vis.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="877 249">
+  <widget class="Gtk.Window" id="MainWindow" design-size="877 285">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Colour visualizer</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -45,18 +45,68 @@
                     <child>
                       <widget class="Gtk.Label" id="label1">
                         <property name="MemberName" />
-                        <property name="LabelProp" translatable="yes">ARGB value</property>
+                        <property name="LabelProp" translatable="yes">Raw RGB value</property>
                       </widget>
                       <packing>
                         <property name="Resize">False</property>
                       </packing>
                     </child>
                     <child>
-                      <widget class="Gtk.Entry" id="result">
+                      <widget class="Gtk.VPaned" id="vpaned2">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
-                        <property name="IsEditable">True</property>
-                        <property name="InvisibleChar">●</property>
+                        <property name="Position">50</property>
+                        <child>
+                          <widget class="Gtk.Entry" id="rawRGBResult">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="IsEditable">False</property>
+                            <property name="InvisibleChar">●</property>
+                          </widget>
+                          <packing>
+                            <property name="Resize">False</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <widget class="Gtk.VPaned" id="vpaned3">
+                            <property name="MemberName" />
+                            <property name="CanFocus">True</property>
+                            <property name="Position">22</property>
+                            <child>
+                              <widget class="Gtk.Label" id="label2">
+                                <property name="MemberName" />
+                                <property name="LabelProp" translatable="yes">CSS rgb()</property>
+                              </widget>
+                              <packing>
+                                <property name="Resize">False</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <widget class="Gtk.VPaned" id="vpaned4">
+                                <property name="MemberName" />
+                                <property name="CanFocus">True</property>
+                                <property name="Position">60</property>
+                                <child>
+                                  <widget class="Gtk.Entry" id="cssRGBOutput">
+                                    <property name="MemberName" />
+                                    <property name="CanFocus">True</property>
+                                    <property name="IsEditable">False</property>
+                                    <property name="InvisibleChar">●</property>
+                                  </widget>
+                                  <packing>
+                                    <property name="Resize">False</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <widget class="Gtk.Fixed" id="fixed1">
+                                    <property name="MemberName" />
+                                    <property name="HasWindow">False</property>
+                                  </widget>
+                                </child>
+                              </widget>
+                            </child>
+                          </widget>
+                        </child>
                       </widget>
                     </child>
                   </widget>
