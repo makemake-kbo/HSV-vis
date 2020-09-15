@@ -23,7 +23,11 @@ public partial class MainWindow: Gtk.Window
 
 		char[] delimiterChars = { ':', '/' };
 		string[] rgbValues = rawRGBValue.Split(delimiterChars);
-		string parsedRGBValues = $"rgb({rgbValues[1]}, {rgbValues[2]}, {rgbValues[3]})";
+
+		//TODO: after converting from hex to int, convert the 0-65535 colourspace to the standard 0-255.
+		//      Also fix a bug that doesnt update the rgb() value!
+		Int32[] intengerRGB = {Convert.ToInt32(rgbValues[1], 16), Convert.ToInt32(rgbValues[1], 16), Convert.ToInt32(rgbValues[1], 16)}; 
+		string parsedRGBValues = $"rgb({intengerRGB[0]}, {intengerRGB[1]}, {intengerRGB[2]})";
 
 		cssRGBOutput.Text = parsedRGBValues;
 	}
