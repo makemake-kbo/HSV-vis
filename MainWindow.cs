@@ -17,24 +17,26 @@ public partial class MainWindow: Gtk.Window
 	//This function takes the raw value colorselection responds with and
 	//makes it so it can be used with CSS's rgb() function
 	//ie. converts rgb:dc54/5538/5538 to rgb(dc54, 5538, 5538)
-	protected void rawStringToRGB ()
+	protected string rawStringToRGB ()
 	{
+
 		string rawRGBValue = colorselection2.CurrentColor.ToString();
 
 		char[] delimiterChars = { ':', '/' };
 		string[] rgbValues = rawRGBValue.Split(delimiterChars);
 
 		//TODO: after converting from hex to int, convert the 0-65535 colourspace to the standard 0-255.
-		//      Also fix a bug that doesnt update the rgb() value!
-		Int32[] intengerRGB = {Convert.ToInt32(rgbValues[1], 16), Convert.ToInt32(rgbValues[1], 16), Convert.ToInt32(rgbValues[1], 16)}; 
-		string parsedRGBValues = $"rgb({intengerRGB[0]}, {intengerRGB[1]}, {intengerRGB[2]})";
+		//This horibleness is unfortunatley necessary to fix a bug with the red value not updating properlly. 
+		Int32 redValue = Convert.ToInt32(rgbValues[1], 16);
+		Int32 blueValue = Convert.ToInt32(rgbValues[2], 16);
+		Int32 greenValue = Convert.ToInt32(rgbValues[3], 16);
+		return $"rgb({redValue}, {blueValue}, {greenValue})";
 
-		cssRGBOutput.Text = parsedRGBValues;
 	}
 
 	protected void OnColorselection2ColorChanged (object sender, EventArgs e)
 	{
 		rawRGBResult.Text = colorselection2.CurrentColor.ToString();
-		rawStringToRGB ();
+		cssRGBOutput.Text = rawStringToRGB ();
 	}
 }
