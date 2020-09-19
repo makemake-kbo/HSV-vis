@@ -5,7 +5,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Debug/HSV-vis.exe" internal="true" />
+    <widget-library name="../bin/Release/HSV-vis.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="877 285">
     <property name="MemberName" />
@@ -75,7 +75,7 @@
                             <child>
                               <widget class="Gtk.Label" id="label2">
                                 <property name="MemberName" />
-                                <property name="LabelProp" translatable="yes">CSS rgb()</property>
+                                <property name="LabelProp" translatable="yes">CSS 8-bit rgb()</property>
                               </widget>
                               <packing>
                                 <property name="Resize">False</property>
@@ -87,7 +87,7 @@
                                 <property name="CanFocus">True</property>
                                 <property name="Position">60</property>
                                 <child>
-                                  <widget class="Gtk.Entry" id="cssRGBOutput">
+                                  <widget class="Gtk.Entry" id="cssRGB8bitOutput">
                                     <property name="MemberName" />
                                     <property name="CanFocus">True</property>
                                     <property name="IsEditable">False</property>
@@ -98,9 +98,43 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <widget class="Gtk.Fixed" id="fixed1">
+                                  <widget class="Gtk.VPaned" id="vpaned5">
                                     <property name="MemberName" />
-                                    <property name="HasWindow">False</property>
+                                    <property name="CanFocus">True</property>
+                                    <property name="Position">22</property>
+                                    <child>
+                                      <widget class="Gtk.Label" id="label3">
+                                        <property name="MemberName" />
+                                        <property name="LabelProp" translatable="yes">CSS 16-bit rgb()</property>
+                                      </widget>
+                                      <packing>
+                                        <property name="Resize">False</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <widget class="Gtk.VPaned" id="vpaned6">
+                                        <property name="MemberName" />
+                                        <property name="CanFocus">True</property>
+                                        <property name="Position">50</property>
+                                        <child>
+                                          <widget class="Gtk.Entry" id="cssRGB16bitOutput">
+                                            <property name="MemberName" />
+                                            <property name="CanFocus">True</property>
+                                            <property name="IsEditable">False</property>
+                                            <property name="InvisibleChar">●</property>
+                                          </widget>
+                                          <packing>
+                                            <property name="Resize">False</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <widget class="Gtk.Fixed" id="fixed1">
+                                            <property name="MemberName" />
+                                            <property name="HasWindow">False</property>
+                                          </widget>
+                                        </child>
+                                      </widget>
+                                    </child>
                                   </widget>
                                 </child>
                               </widget>
