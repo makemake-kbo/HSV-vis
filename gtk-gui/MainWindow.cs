@@ -85,6 +85,7 @@ public partial class MainWindow
 		this.rawRGBResult = new global::Gtk.Entry ();
 		this.rawRGBResult.CanFocus = true;
 		this.rawRGBResult.Name = "rawRGBResult";
+		this.rawRGBResult.Text = global::Mono.Unix.Catalog.GetString ("rgb:ffff/ffff/ffff");
 		this.rawRGBResult.IsEditable = false;
 		this.rawRGBResult.InvisibleChar = '●';
 		this.vpaned2.Add (this.rawRGBResult);
@@ -111,6 +112,7 @@ public partial class MainWindow
 		this.cssRGB8bitOutput = new global::Gtk.Entry ();
 		this.cssRGB8bitOutput.CanFocus = true;
 		this.cssRGB8bitOutput.Name = "cssRGB8bitOutput";
+		this.cssRGB8bitOutput.Text = global::Mono.Unix.Catalog.GetString ("rgb(255, 255, 255)");
 		this.cssRGB8bitOutput.IsEditable = false;
 		this.cssRGB8bitOutput.InvisibleChar = '●';
 		this.vpaned4.Add (this.cssRGB8bitOutput);
@@ -137,6 +139,7 @@ public partial class MainWindow
 		this.cssRGB16bitOutput = new global::Gtk.Entry ();
 		this.cssRGB16bitOutput.CanFocus = true;
 		this.cssRGB16bitOutput.Name = "cssRGB16bitOutput";
+		this.cssRGB16bitOutput.Text = global::Mono.Unix.Catalog.GetString ("rgb(65535, 65535, 65535)");
 		this.cssRGB16bitOutput.IsEditable = false;
 		this.cssRGB16bitOutput.InvisibleChar = '●';
 		this.vpaned6.Add (this.cssRGB16bitOutput);

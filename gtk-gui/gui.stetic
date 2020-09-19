@@ -5,7 +5,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Release/HSV-vis.exe" internal="true" />
+    <widget-library name="../bin/Debug/HSV-vis.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="877 285">
     <property name="MemberName" />
@@ -60,6 +60,7 @@
                           <widget class="Gtk.Entry" id="rawRGBResult">
                             <property name="MemberName" />
                             <property name="CanFocus">True</property>
+                            <property name="Text" translatable="yes">rgb:ffff/ffff/ffff</property>
                             <property name="IsEditable">False</property>
                             <property name="InvisibleChar">●</property>
                           </widget>
@@ -90,6 +91,7 @@
                                   <widget class="Gtk.Entry" id="cssRGB8bitOutput">
                                     <property name="MemberName" />
                                     <property name="CanFocus">True</property>
+                                    <property name="Text" translatable="yes">rgb(255, 255, 255)</property>
                                     <property name="IsEditable">False</property>
                                     <property name="InvisibleChar">●</property>
                                   </widget>
@@ -120,6 +122,7 @@
                                           <widget class="Gtk.Entry" id="cssRGB16bitOutput">
                                             <property name="MemberName" />
                                             <property name="CanFocus">True</property>
+                                            <property name="Text" translatable="yes">rgb(65535, 65535, 65535)</property>
                                             <property name="IsEditable">False</property>
                                             <property name="InvisibleChar">●</property>
                                           </widget>
