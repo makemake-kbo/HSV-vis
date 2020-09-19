@@ -17,7 +17,7 @@ public partial class MainWindow: Gtk.Window
 
 	//This function takes the raw value colorselection responds with and
 	//makes it so it can be used with CSS's rgb() function
-	//ie. converts rgb:dc54/5538/5538 to rgb(dc54, 5538, 5538)
+	//ie. converts rgb:ffff/ffff/ffff to rgb(255, 255, 255)
 	protected string rawStringToRGB (bool is8bit)
 	{
 
