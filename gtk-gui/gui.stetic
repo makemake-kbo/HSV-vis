@@ -14,17 +14,15 @@
         <property name="Label" translatable="yes">File</property>
         <property name="ShortLabel" translatable="yes">File</property>
       </action>
-      <action id="InfoAction">
+      <action id="AboutAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">Info</property>
+        <property name="Label" translatable="yes">About</property>
         <property name="ShortLabel" translatable="yes">Info</property>
-        <signal name="Activated" handler="OnInfoActionActivated" />
       </action>
       <action id="QuitAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Quit</property>
         <property name="ShortLabel" translatable="yes">Quit</property>
-        <signal name="Activated" handler="OnQuitActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -35,13 +33,13 @@
       <widget class="Gtk.VPaned" id="vpaned1">
         <property name="MemberName" />
         <property name="CanFocus">True</property>
-        <property name="Position">24</property>
+        <property name="Position">26</property>
         <child>
           <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
-            <node name="__gtksharp_95_Stetic_Editor_ActionMenuBar" type="Menubar">
+            <node name="menubar1" type="Menubar">
               <node type="Menu" action="FileAction">
-                <node type="Menuitem" action="InfoAction" />
+                <node type="Menuitem" action="AboutAction" />
                 <node type="Menuitem" action="QuitAction" />
               </node>
             </node>
@@ -191,6 +189,48 @@
               </widget>
             </child>
           </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="HSVvis.AboutWindow" design-size="403 300">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">AboutWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Image" id="image1">
+            <property name="MemberName" />
+          </widget>
+          <packing>
+            <property name="X">174</property>
+            <property name="Y">83</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">HSV-vis is licensed under the BSD-2-clause license</property>
+          </widget>
+          <packing>
+            <property name="X">35</property>
+            <property name="Y">183</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">HSV-vis Alpha Development Build</property>
+          </widget>
+          <packing>
+            <property name="X">89</property>
+            <property name="Y">147</property>
+          </packing>
         </child>
       </widget>
     </child>

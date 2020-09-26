@@ -7,7 +7,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Action FileAction;
 	
-	private global::Gtk.Action InfoAction;
+	private global::Gtk.Action AboutAction;
 	
 	private global::Gtk.Action QuitAction;
 	
@@ -58,9 +58,9 @@ public partial class MainWindow
 		this.FileAction = new global::Gtk.Action ("FileAction", global::Mono.Unix.Catalog.GetString ("File"), null, null);
 		this.FileAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("File");
 		w1.Add (this.FileAction, null);
-		this.InfoAction = new global::Gtk.Action ("InfoAction", global::Mono.Unix.Catalog.GetString ("Info"), null, null);
-		this.InfoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Info");
-		w1.Add (this.InfoAction, null);
+		this.AboutAction = new global::Gtk.Action ("AboutAction", global::Mono.Unix.Catalog.GetString ("About"), null, null);
+		this.AboutAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Info");
+		w1.Add (this.AboutAction, null);
 		this.QuitAction = new global::Gtk.Action ("QuitAction", global::Mono.Unix.Catalog.GetString ("Quit"), null, null);
 		this.QuitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Quit");
 		w1.Add (this.QuitAction, null);
@@ -73,11 +73,11 @@ public partial class MainWindow
 		this.vpaned1 = new global::Gtk.VPaned ();
 		this.vpaned1.CanFocus = true;
 		this.vpaned1.Name = "vpaned1";
-		this.vpaned1.Position = 24;
+		this.vpaned1.Position = 26;
 		// Container child vpaned1.Gtk.Paned+PanedChild
 		this.UIManager.AddUiFromString ("<ui><menubar name=\'menubar1\'><menu name=\'FileAction\' action=\'FileAction\'><menuite" +
-		"m name=\'InfoAction\' action=\'InfoAction\'/><menuitem name=\'QuitAction\' action=\'Qui" +
-		"tAction\'/></menu></menubar></ui>");
+		"m name=\'AboutAction\' action=\'AboutAction\'/><menuitem name=\'QuitAction\' action=\'Q" +
+		"uitAction\'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vpaned1.Add (this.menubar1);
@@ -106,7 +106,6 @@ public partial class MainWindow
 		// Container child hpaned1.Gtk.Paned+PanedChild
 		this.vpaned2 = new global::Gtk.VPaned ();
 		this.vpaned2.CanFocus = true;
-		this.vpaned2.Name = "vpaned2";
 		this.vpaned2.Position = 19;
 		// Container child vpaned2.Gtk.Paned+PanedChild
 		this.label1 = new global::Gtk.Label ();
@@ -206,8 +205,6 @@ public partial class MainWindow
 		this.DefaultHeight = 285;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
-		this.InfoAction.Activated += new global::System.EventHandler (this.OnInfoActionActivated);
-		this.QuitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);
 		this.colorselection2.ColorChanged += new global::System.EventHandler (this.OnColorselection2ColorChanged);
 	}
 }

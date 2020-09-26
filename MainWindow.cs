@@ -5,7 +5,6 @@ public partial class MainWindow: Gtk.Window
 {
 	public MainWindow () : base (Gtk.WindowType.Toplevel)
 	{
-
 		Build ();
 	}
 
@@ -60,7 +59,6 @@ public partial class MainWindow: Gtk.Window
 
 	protected void OnInfoActionActivated (object sender, EventArgs e)
 	{
-		throw new NotImplementedException ();
+		//Gtk.Window
 	}
-
 }
