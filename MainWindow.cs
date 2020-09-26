@@ -1,5 +1,6 @@
 ﻿using System;
 using Gtk;
+using HSVvis;
 
 public partial class MainWindow: Gtk.Window
 {
@@ -51,14 +52,15 @@ public partial class MainWindow: Gtk.Window
 		cssRGB16bitOutput.Text = rawStringToRGB ( false );
 	}
 
-	// Menu bar functions
+	public void OnAboutActionActivated (object sender, EventArgs e)
+	{
+		//AboutWindow.Build ();
+	}
+		
 	protected void OnQuitActionActivated (object sender, EventArgs e)
 	{
 		Application.Quit ();
+		a.RetVal = true;
 	}
 
-	protected void OnInfoActionActivated (object sender, EventArgs e)
-	{
-		//Gtk.Window
-	}
 }

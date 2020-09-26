@@ -18,11 +18,13 @@
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">About</property>
         <property name="ShortLabel" translatable="yes">Info</property>
+        <signal name="Activated" handler="OnAboutActionActivated" />
       </action>
       <action id="QuitAction">
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Quit</property>
         <property name="ShortLabel" translatable="yes">Quit</property>
+        <signal name="Activated" handler="OnQuitActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -37,7 +39,7 @@
         <child>
           <widget class="Gtk.MenuBar" id="menubar1">
             <property name="MemberName" />
-            <node name="menubar1" type="Menubar">
+            <node name="__gtksharp_95_Stetic_Editor_ActionMenuBar" type="Menubar">
               <node type="Menu" action="FileAction">
                 <node type="Menuitem" action="AboutAction" />
                 <node type="Menuitem" action="QuitAction" />

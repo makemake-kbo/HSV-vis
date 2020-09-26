@@ -9,7 +9,9 @@ namespace HSVvis
 		{
 			Application.Init ();
 			MainWindow win = new MainWindow ();
+			AboutWindow about = new AboutWindow ();
 			win.Show ();
+			about.Show ();
 
 			Application.Run ();
 		}
