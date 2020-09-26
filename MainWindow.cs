@@ -51,4 +51,16 @@ public partial class MainWindow: Gtk.Window
 		cssRGB8bitOutput.Text = rawStringToRGB ( true );
 		cssRGB16bitOutput.Text = rawStringToRGB ( false );
 	}
+
+	// Menu bar functions
+	protected void OnQuitActionActivated (object sender, EventArgs e)
+	{
+		Application.Quit ();
+	}
+
+	protected void OnInfoActionActivated (object sender, EventArgs e)
+	{
+		throw new NotImplementedException ();
+	}
+
 }

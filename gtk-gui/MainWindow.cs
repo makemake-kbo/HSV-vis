@@ -3,6 +3,18 @@
 
 public partial class MainWindow
 {
+	private global::Gtk.UIManager UIManager;
+	
+	private global::Gtk.Action FileAction;
+	
+	private global::Gtk.Action InfoAction;
+	
+	private global::Gtk.Action QuitAction;
+	
+	private global::Gtk.VPaned vpaned1;
+	
+	private global::Gtk.MenuBar menubar1;
+	
 	private global::Gtk.Frame frame1;
 	
 	private global::Gtk.Alignment GtkAlignment;
@@ -11,27 +23,27 @@ public partial class MainWindow
 	
 	private global::Gtk.ColorSelection colorselection2;
 	
-	private global::Gtk.VPaned vpaned1;
+	private global::Gtk.VPaned vpaned2;
 	
 	private global::Gtk.Label label1;
 	
-	private global::Gtk.VPaned vpaned2;
+	private global::Gtk.VPaned vpaned3;
 	
 	private global::Gtk.Entry rawRGBResult;
 	
-	private global::Gtk.VPaned vpaned3;
+	private global::Gtk.VPaned vpaned4;
 	
 	private global::Gtk.Label label2;
 	
-	private global::Gtk.VPaned vpaned4;
+	private global::Gtk.VPaned vpaned5;
 	
 	private global::Gtk.Entry cssRGB8bitOutput;
 	
-	private global::Gtk.VPaned vpaned5;
+	private global::Gtk.VPaned vpaned6;
 	
 	private global::Gtk.Label label3;
 	
-	private global::Gtk.VPaned vpaned6;
+	private global::Gtk.VPaned vpaned7;
 	
 	private global::Gtk.Entry cssRGB16bitOutput;
 	
@@ -41,10 +53,37 @@ public partial class MainWindow
 	{
 		global::Stetic.Gui.Initialize (this);
 		// Widget MainWindow
+		this.UIManager = new global::Gtk.UIManager ();
+		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
+		this.FileAction = new global::Gtk.Action ("FileAction", global::Mono.Unix.Catalog.GetString ("File"), null, null);
+		this.FileAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("File");
+		w1.Add (this.FileAction, null);
+		this.InfoAction = new global::Gtk.Action ("InfoAction", global::Mono.Unix.Catalog.GetString ("Info"), null, null);
+		this.InfoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Info");
+		w1.Add (this.InfoAction, null);
+		this.QuitAction = new global::Gtk.Action ("QuitAction", global::Mono.Unix.Catalog.GetString ("Quit"), null, null);
+		this.QuitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Quit");
+		w1.Add (this.QuitAction, null);
+		this.UIManager.InsertActionGroup (w1, 0);
+		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
 		this.Title = global::Mono.Unix.Catalog.GetString ("Colour visualizer");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
 		// Container child MainWindow.Gtk.Container+ContainerChild
+		this.vpaned1 = new global::Gtk.VPaned ();
+		this.vpaned1.CanFocus = true;
+		this.vpaned1.Name = "vpaned1";
+		this.vpaned1.Position = 24;
+		// Container child vpaned1.Gtk.Paned+PanedChild
+		this.UIManager.AddUiFromString ("<ui><menubar name=\'menubar1\'><menu name=\'FileAction\' action=\'FileAction\'><menuite" +
+		"m name=\'InfoAction\' action=\'InfoAction\'/><menuitem name=\'QuitAction\' action=\'Qui" +
+		"tAction\'/></menu></menubar></ui>");
+		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
+		this.menubar1.Name = "menubar1";
+		this.vpaned1.Add (this.menubar1);
+		global::Gtk.Paned.PanedChild w2 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.menubar1]));
+		w2.Resize = false;
+		// Container child vpaned1.Gtk.Paned+PanedChild
 		this.frame1 = new global::Gtk.Frame ();
 		this.frame1.Name = "frame1";
 		this.frame1.ShadowType = ((global::Gtk.ShadowType)(0));
@@ -56,109 +95,110 @@ public partial class MainWindow
 		this.hpaned1 = new global::Gtk.HPaned ();
 		this.hpaned1.CanFocus = true;
 		this.hpaned1.Name = "hpaned1";
-		this.hpaned1.Position = 539;
+		this.hpaned1.Position = 540;
 		// Container child hpaned1.Gtk.Paned+PanedChild
 		this.colorselection2 = new global::Gtk.ColorSelection ();
 		this.colorselection2.Name = "colorselection2";
 		this.colorselection2.HasOpacityControl = true;
 		this.hpaned1.Add (this.colorselection2);
-		global::Gtk.Paned.PanedChild w1 = ((global::Gtk.Paned.PanedChild)(this.hpaned1 [this.colorselection2]));
-		w1.Resize = false;
+		global::Gtk.Paned.PanedChild w3 = ((global::Gtk.Paned.PanedChild)(this.hpaned1 [this.colorselection2]));
+		w3.Resize = false;
 		// Container child hpaned1.Gtk.Paned+PanedChild
-		this.vpaned1 = new global::Gtk.VPaned ();
-		this.vpaned1.CanFocus = true;
-		this.vpaned1.Name = "vpaned1";
-		this.vpaned1.Position = 19;
-		// Container child vpaned1.Gtk.Paned+PanedChild
-		this.label1 = new global::Gtk.Label ();
-		this.label1.Name = "label1";
-		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("Raw RGB value");
-		this.vpaned1.Add (this.label1);
-		global::Gtk.Paned.PanedChild w2 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.label1]));
-		w2.Resize = false;
-		// Container child vpaned1.Gtk.Paned+PanedChild
 		this.vpaned2 = new global::Gtk.VPaned ();
 		this.vpaned2.CanFocus = true;
 		this.vpaned2.Name = "vpaned2";
-		this.vpaned2.Position = 50;
+		this.vpaned2.Position = 19;
 		// Container child vpaned2.Gtk.Paned+PanedChild
+		this.label1 = new global::Gtk.Label ();
+		this.label1.Name = "label1";
+		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("Raw RGB value");
+		this.vpaned2.Add (this.label1);
+		global::Gtk.Paned.PanedChild w4 = ((global::Gtk.Paned.PanedChild)(this.vpaned2 [this.label1]));
+		w4.Resize = false;
+		// Container child vpaned2.Gtk.Paned+PanedChild
+		this.vpaned3 = new global::Gtk.VPaned ();
+		this.vpaned3.CanFocus = true;
+		this.vpaned3.Name = "vpaned3";
+		this.vpaned3.Position = 50;
+		// Container child vpaned3.Gtk.Paned+PanedChild
 		this.rawRGBResult = new global::Gtk.Entry ();
 		this.rawRGBResult.CanFocus = true;
 		this.rawRGBResult.Name = "rawRGBResult";
 		this.rawRGBResult.Text = global::Mono.Unix.Catalog.GetString ("rgb:ffff/ffff/ffff");
 		this.rawRGBResult.IsEditable = false;
 		this.rawRGBResult.InvisibleChar = '●';
-		this.vpaned2.Add (this.rawRGBResult);
-		global::Gtk.Paned.PanedChild w3 = ((global::Gtk.Paned.PanedChild)(this.vpaned2 [this.rawRGBResult]));
-		w3.Resize = false;
-		// Container child vpaned2.Gtk.Paned+PanedChild
-		this.vpaned3 = new global::Gtk.VPaned ();
-		this.vpaned3.CanFocus = true;
-		this.vpaned3.Name = "vpaned3";
-		this.vpaned3.Position = 20;
-		// Container child vpaned3.Gtk.Paned+PanedChild
-		this.label2 = new global::Gtk.Label ();
-		this.label2.Name = "label2";
-		this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("CSS 8-bit rgb()");
-		this.vpaned3.Add (this.label2);
-		global::Gtk.Paned.PanedChild w4 = ((global::Gtk.Paned.PanedChild)(this.vpaned3 [this.label2]));
-		w4.Resize = false;
+		this.vpaned3.Add (this.rawRGBResult);
+		global::Gtk.Paned.PanedChild w5 = ((global::Gtk.Paned.PanedChild)(this.vpaned3 [this.rawRGBResult]));
+		w5.Resize = false;
 		// Container child vpaned3.Gtk.Paned+PanedChild
 		this.vpaned4 = new global::Gtk.VPaned ();
 		this.vpaned4.CanFocus = true;
 		this.vpaned4.Name = "vpaned4";
-		this.vpaned4.Position = 60;
+		this.vpaned4.Position = 20;
 		// Container child vpaned4.Gtk.Paned+PanedChild
+		this.label2 = new global::Gtk.Label ();
+		this.label2.Name = "label2";
+		this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("CSS 8-bit rgb()");
+		this.vpaned4.Add (this.label2);
+		global::Gtk.Paned.PanedChild w6 = ((global::Gtk.Paned.PanedChild)(this.vpaned4 [this.label2]));
+		w6.Resize = false;
+		// Container child vpaned4.Gtk.Paned+PanedChild
+		this.vpaned5 = new global::Gtk.VPaned ();
+		this.vpaned5.CanFocus = true;
+		this.vpaned5.Name = "vpaned5";
+		this.vpaned5.Position = 60;
+		// Container child vpaned5.Gtk.Paned+PanedChild
 		this.cssRGB8bitOutput = new global::Gtk.Entry ();
 		this.cssRGB8bitOutput.CanFocus = true;
 		this.cssRGB8bitOutput.Name = "cssRGB8bitOutput";
 		this.cssRGB8bitOutput.Text = global::Mono.Unix.Catalog.GetString ("rgb(255, 255, 255)");
 		this.cssRGB8bitOutput.IsEditable = false;
 		this.cssRGB8bitOutput.InvisibleChar = '●';
-		this.vpaned4.Add (this.cssRGB8bitOutput);
-		global::Gtk.Paned.PanedChild w5 = ((global::Gtk.Paned.PanedChild)(this.vpaned4 [this.cssRGB8bitOutput]));
-		w5.Resize = false;
-		// Container child vpaned4.Gtk.Paned+PanedChild
-		this.vpaned5 = new global::Gtk.VPaned ();
-		this.vpaned5.CanFocus = true;
-		this.vpaned5.Name = "vpaned5";
-		this.vpaned5.Position = 22;
-		// Container child vpaned5.Gtk.Paned+PanedChild
-		this.label3 = new global::Gtk.Label ();
-		this.label3.Name = "label3";
-		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("CSS 16-bit rgb()");
-		this.vpaned5.Add (this.label3);
-		global::Gtk.Paned.PanedChild w6 = ((global::Gtk.Paned.PanedChild)(this.vpaned5 [this.label3]));
-		w6.Resize = false;
+		this.vpaned5.Add (this.cssRGB8bitOutput);
+		global::Gtk.Paned.PanedChild w7 = ((global::Gtk.Paned.PanedChild)(this.vpaned5 [this.cssRGB8bitOutput]));
+		w7.Resize = false;
 		// Container child vpaned5.Gtk.Paned+PanedChild
 		this.vpaned6 = new global::Gtk.VPaned ();
 		this.vpaned6.CanFocus = true;
 		this.vpaned6.Name = "vpaned6";
-		this.vpaned6.Position = 50;
+		this.vpaned6.Position = 22;
 		// Container child vpaned6.Gtk.Paned+PanedChild
+		this.label3 = new global::Gtk.Label ();
+		this.label3.Name = "label3";
+		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("CSS 16-bit rgb()");
+		this.vpaned6.Add (this.label3);
+		global::Gtk.Paned.PanedChild w8 = ((global::Gtk.Paned.PanedChild)(this.vpaned6 [this.label3]));
+		w8.Resize = false;
+		// Container child vpaned6.Gtk.Paned+PanedChild
+		this.vpaned7 = new global::Gtk.VPaned ();
+		this.vpaned7.CanFocus = true;
+		this.vpaned7.Name = "vpaned7";
+		this.vpaned7.Position = 14;
+		// Container child vpaned7.Gtk.Paned+PanedChild
 		this.cssRGB16bitOutput = new global::Gtk.Entry ();
 		this.cssRGB16bitOutput.CanFocus = true;
 		this.cssRGB16bitOutput.Name = "cssRGB16bitOutput";
 		this.cssRGB16bitOutput.Text = global::Mono.Unix.Catalog.GetString ("rgb(65535, 65535, 65535)");
 		this.cssRGB16bitOutput.IsEditable = false;
 		this.cssRGB16bitOutput.InvisibleChar = '●';
-		this.vpaned6.Add (this.cssRGB16bitOutput);
-		global::Gtk.Paned.PanedChild w7 = ((global::Gtk.Paned.PanedChild)(this.vpaned6 [this.cssRGB16bitOutput]));
-		w7.Resize = false;
-		// Container child vpaned6.Gtk.Paned+PanedChild
+		this.vpaned7.Add (this.cssRGB16bitOutput);
+		global::Gtk.Paned.PanedChild w9 = ((global::Gtk.Paned.PanedChild)(this.vpaned7 [this.cssRGB16bitOutput]));
+		w9.Resize = false;
+		// Container child vpaned7.Gtk.Paned+PanedChild
 		this.fixed1 = new global::Gtk.Fixed ();
 		this.fixed1.Name = "fixed1";
 		this.fixed1.HasWindow = false;
-		this.vpaned6.Add (this.fixed1);
+		this.vpaned7.Add (this.fixed1);
+		this.vpaned6.Add (this.vpaned7);
 		this.vpaned5.Add (this.vpaned6);
 		this.vpaned4.Add (this.vpaned5);
 		this.vpaned3.Add (this.vpaned4);
 		this.vpaned2.Add (this.vpaned3);
-		this.vpaned1.Add (this.vpaned2);
-		this.hpaned1.Add (this.vpaned1);
+		this.hpaned1.Add (this.vpaned2);
 		this.GtkAlignment.Add (this.hpaned1);
 		this.frame1.Add (this.GtkAlignment);
-		this.Add (this.frame1);
+		this.vpaned1.Add (this.frame1);
+		this.Add (this.vpaned1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
@@ -166,6 +206,8 @@ public partial class MainWindow
 		this.DefaultHeight = 285;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
+		this.InfoAction.Activated += new global::System.EventHandler (this.OnInfoActionActivated);
+		this.QuitAction.Activated += new global::System.EventHandler (this.OnQuitActionActivated);
 		this.colorselection2.ColorChanged += new global::System.EventHandler (this.OnColorselection2ColorChanged);
 	}
 }
