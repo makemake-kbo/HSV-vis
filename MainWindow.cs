@@ -60,7 +60,6 @@ public partial class MainWindow: Gtk.Window
 	protected void OnQuitActionActivated (object sender, EventArgs e)
 	{
 		Application.Quit ();
-		a.RetVal = true;
 	}
 
 }
