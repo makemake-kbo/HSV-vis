@@ -1,5 +1,5 @@
 # HSV-vis
-A GTK themeable C# colour picker app. Currently in alpha with more features to be added.
+A GTK themeable C# colour picker app. Currently in alpha and will probably stay in this state for a long time :(
 
 ## Screenshots
 ![HSV-vis](https://user-images.githubusercontent.com/55022497/93669629-d347f180-fa95-11ea-8d65-5e248a6aa0af.png)
